@@ -1,0 +1,189 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap";
+
+/* Basic Setup */
+body {
+    background-color: #0d0d0d !important; /* Very dark grey/near black background */
+    color: #ffffff !important; /* White text */
+    font-family: "Roboto", sans-serif !important;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* Allow scrolling */
+}
+
+/* General Dark/Transparent Panels */
+#topmenu,
+#cht_inp_bg,
+#chat_msg_body > end_of_context_koboldlite_internal > div > div.AI-portrait-image + div,
+#chat_msg_body > end_of_context_koboldlite_internal > div > div.you-portrait-image + div,
+.box.flex-push-right, /* For right-side panels */
+.nspopup.flexsize, /* Popups */
+#settingsmenumedia,
+#settingsmenuformat,
+#settingsmenuadvanced,
+#settingsmenusamplers,
+.popuptitlebar,
+.popupfooter,
+.nav.nav-tabs.settingsnav li a, /* Settings tabs */
+.aidgpopuplistheader.settingsbody * /* Settings headers */
+{
+    background-color: rgba(18, 18, 28, 0.9) !important; /* Slightly lighter dark background with transparency */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px; /* Slightly smaller rounded corners */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4); /* Soft shadow */
+    color: #ffffff !important; /* Ensure text is white */
+    border: none !important;
+}
+
+/* Top Menu */
+#topmenu {
+    margin: 10px; /* Reduced margin */
+    padding: 8px; /* Reduced padding */
+}
+
+/* Chat Input Area */
+#cht_inp_bg {
+    padding: 10px; /* Reduced padding */
+    margin: 0 8px 10px 8px; /* Reduced margin */
+}
+
+/* Chat Messages */
+#chat_msg_body > end_of_context_koboldlite_internal > div > div {
+    color: #ffffff; /* White text in chat bubbles */
+    padding: 12px; /* Reduced padding */
+    margin: 8px; /* Reduced margin */
+    min-height: 40px; /* Reduced min-height */
+    border-radius: 10px; /* Slightly smaller rounded corners */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    /* Specific colors for user/AI if needed, otherwise uses the general panel style */
+}
+
+/* Buttons - Dark Blue Accent */
+button,
+.chat_msg_send_btn,
+.chat_msg_cust_btn,
+.cht_inp_hold .chat_btnmode_chat, /* Example button class */
+.btn-primary,
+#btn_settingsclose,
+#btn_settingsaccept {
+    background-color: #3498db !important; /* Dark blue color */
+    color: #ffffff !important; /* White text on buttons */
+    border: none !important;
+    border-radius: 6px; /* Smaller rounded corners for buttons */
+    padding: 6px 12px; /* Reduced padding */
+    margin: 4px; /* Reduced margin */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.4); /* Subtle dark blue glow */
+    cursor: pointer;
+}
+
+/* Button Hover Effect */
+button:hover,
+.chat_msg_send_btn:hover,
+.chat_msg_cust_btn:hover,
+.cht_inp_hold .chat_btnmode_chat:hover,
+.btn-primary:hover,
+#btn_settingsclose:hover,
+#btn_settingsaccept:hover {
+    background-color: #2980b9 !important; /* Slightly darker blue on hover */
+    box-shadow: 0 0 12px rgba(41, 128, 185, 0.6); /* Stronger glow on hover */
+    transform: translateY(-1px); /* Smaller slight lift effect */
+}
+
+/* Active/Focus States (Optional) */
+*:focus {
+    outline: none !important; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.5); /* Custom focus indicator */
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px; /* Slightly thinner scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(25, 25, 35, 0.6); /* Dark, slightly transparent track */
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(52, 152, 219, 0.7); /* Semi-transparent dark blue thumb */
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2980b9; /* Darker blue on hover */
+}
+
+/* Specific adjustments based on common Kobold CSS */
+.cht_inp_hold_outer {
+    border: none !important;
+}
+
+.nav-link {
+     color: #ffffff !important; /* Ensure nav links are white */
+}
+
+.nav-item:hover, .nav-link:hover {
+     background-color: rgba(52, 152, 219, 0.3) !important; /* Subtle dark blue hover for nav */
+     border-radius: 6px;
+}
+
+.settingsnav > li.active > a {
+  color: #ffffff !important;
+  font-weight: bold;
+  background-color: rgba(52, 152, 219, 0.5) !important; /* Active tab color */
+}
+
+.form-control {
+    background-color: rgba(25, 25, 35, 0.7) !important; /* Darker input fields */
+    color: #ffffff !important; /* White text in inputs */
+    border: 1px solid rgba(52, 152, 219, 0.5) !important; /* Dark blue border */
+    border-radius: 4px; /* Slightly smaller border radius */
+    padding: 4px 8px; /* Reduced padding */
+    height: auto; /* Allow height to adjust based on content */
+}
+
+.form-control:focus {
+     border-color: #2980b9 !important; /* Darker blue border on focus */
+     box-shadow: 0 0 4px rgba(41, 128, 185, 0.5);
+}
+
+/* Ensure images aren't ruined by background styles */
+img {
+    background: none !important;
+}
+
+/* Ensure elements overriding general styles are handled */
+body.connected .nav-link {
+    /* If Kobold highlights connected status with a color, you might need to override it here if it clashes */
+    color: #ffffff !important; /* Keep text white */
+    /* background-color: inherit !important; /* Or set a specific background */
+}
+
+/* Remove default outlines */
+* {
+    outline: none;
+}
+
+/* --- Code Block Styling --- */
+/* This targets preformatted text and code tags */
+pre, code {
+    background-color: #0a0a0a !important; /* Even darker background for code blocks */
+    color: #3498db !important; /* Dark blue text for code */
+    padding: 8px; /* Reduced padding */
+    border-radius: 6px; /* Slightly smaller rounded corners */
+    overflow-x: auto; /* Add horizontal scroll if code is too wide */
+    font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace; /* Monospace font for code */
+    font-size: 0.85em; /* Slightly smaller font size */
+    white-space: pre-wrap; /* Wrap long lines */
+    word-wrap: break-word; /* Break words if necessary */
+    text-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Subtle dark blue glow for text */
+}
+
+/* Specific styling for inline code if needed (optional) */
+/* code {
+    padding: 2px 4px;
+    border-radius: 4px;
+} */
+
